@@ -1,7 +1,14 @@
 class TrackersController < ApplicationController
-  def new
-  end
 
-  def index
-  end
+
+	def new
+		@tracker = Tracker.new
+	end
+
+	def index
+	end
+
+	def show
+		@tracker = Tracker.find(params[:id])
+	end
 end

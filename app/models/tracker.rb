@@ -1,6 +1,9 @@
 class Tracker < ApplicationRecord
+	validates :name, presence: true, length: { maximum: 150 }
+	validates :keywords, presence: true, length: { maximum: 300 }
+	validates :enabled, presence: true
+	validates :look_in, presence: true
 
-	#attr_accessor :name, :keywords, :enabled, :look_in
 
 	def initialize(attributes = {})
 		super(attributes)

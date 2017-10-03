@@ -1,5 +1,24 @@
-<% provide(:title, "Create New Tracker") %>
-    <h1>New Tracker</h1>
-    <p>
-    	Create 'em here!
-    </p>
+<% provide(:title, "Create New Campaign") %>
+    <h1>New Campaign</h1>
+    	<div class="row">
+    		<div class="col-md-6 col-md-offset-3">
+    			<%= form_for(@tracker) do |f| %>
+    				<%= f.label :name %>
+    				<%= f.text_field :name %>
+
+    				<%= f.label :keywords %>
+    				<%= f.text_field :keywords %>
+
+    				<%= f.check_box :enabled %> <%= f.label :enabled %>
+    				
+
+    				<%= f.radio_button :look_in, 'Comments' %> <%= f.label :look_in, 'Comments', :value => 1 %>
+    				<%= f.radio_button :look_in, 'Submissions' %>
+    				<%= f.label :look_in, 'Submissions', :value => 2 %>
+    				<%= f.radio_button :look_in, 'Both' %>
+    				<%= f.label :look_in, 'Both', :value => 3 %>
+
+    				<%= f.submit "Create New Campaign", class: "btn btn-primary" %>
+    			<% end %>
+    		</div>
+    	</div>

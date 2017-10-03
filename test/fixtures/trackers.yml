@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  keywords: MyString
-  enabled: false
-  look_in: MyString
+  name: Campaign One
+  keywords: Tracy Jordan
+  enabled: true
+  look_in: 1
 
 two:
-  name: MyString
-  keywords: MyString
+  name: Campaign Two
+  keywords: Fur Hats
   enabled: false
-  look_in: MyString
+  look_in: 2
