@@ -1,0 +1,26 @@
+<% provide(:title, "Edit Campaign") %>
+    <h1><%= @tracker.name %></h1>
+    	<div class="row">
+    		<div class="col-md-6 col-md-offset-3">
+    			<%= form_for(@tracker) do |f| %>
+                    <%= render '/shared/error_messages' %>
+
+    				<%= f.label :name %>
+    				<%= f.text_field :name, class: 'form-control' %>
+
+    				<%= f.label :keywords %>
+    				<%= f.text_field :keywords, class: 'form-control' %>
+
+                    <%= f.label :look_in %>
+                    <%= f.select :look_in, options_for_select(Tracker.look_ins.keys.to_a, @tracker.look_in) %>
+
+                    <%= f.check_box :enabled, { checked: @tracker.enabled }, style: 'width: auto;' %>
+                        <%= f.label :enabled, class: 'checkbox-inline', style: 'width: auto;' %>
+                    
+
+
+
+    				<%= f.submit "Save", class: "btn btn-primary" %>
+    			<% end %>
+    		</div>
+    	</div>

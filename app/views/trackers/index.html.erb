@@ -1,5 +1,35 @@
 <% provide(:title, "View all Campaigns") %>
-    <h1>All Trackers</h1>
-    <p>
-    	See 'em here!
-    </p>
+    <h1>All Campaigns</h1>
+
+    <%= link_to "New Campaign", new_tracker_path, :class => "btn btn-primary" %>
+
+
+    <%= will_paginate %>
+
+    <table class="table table-hover">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Enabled</th>
+      <th>Campaign Name</th>
+      <th>Keywords</th>
+      <th>Search In</th>
+      <th>Edit</th>
+      <th>Last Run</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% @trackers.each do |t| %>
+    <tr>
+      <td><%= image_tag "reddit.jpg", alt:"Reddit" %></td>
+      <th scope="row"><%= t.enabled %></th>
+      <td><%= link_to t.name, t %></td>
+      <td><%= t.keywords %></td>
+      <td><%= t.look_in %></td>
+      <td><%= link_to "edit", edit_tracker_path(t) %></td>
+      <td>9/9/2019 10:21 am</td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+    <%= will_paginate %>    

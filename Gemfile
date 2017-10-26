@@ -31,8 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass', '3.3.7'
 gem 'rails-controller-testing'
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'will_paginate',           '3.1.0'
 
 group :development, :test do
   gem 'minitest-reporters',       '1.1.14'

@@ -18,10 +18,29 @@ class TrackersController < ApplicationController
 	end
 
 	def index
+		 @trackers = Tracker.all.paginate(page: params[:page])
 	end
 
 	def show
 		@tracker = Tracker.find(params[:id])
+	end
+
+	def edit
+		@tracker = Tracker.find(params[:id])
+	end
+
+	def update
+		@tracker = Tracker.find(params[:id])
+		
+		if @tracker.update_attributes(tracker_params)
+			# save was successful
+			flash[:success] = "Your edits were saved!"
+			redirect_to @tracker
+		else
+			# save failed
+			render 'edit'
+		end
+
 	end
 
 	private
